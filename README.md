@@ -1,39 +1,53 @@
-# Springcloud
+一 将本地已经有的文件（仓库）提交到远程仓库（未与远程仓库关联）
+1.初始化仓库
+ git init
 
-#### 介绍
-{**以下是码云平台说明，您可以替换此简介**
-码云是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+2.添加远程
+git remote add origin git@gitee.com:linyang520/Springcloud.git
 
-#### 软件架构
-软件架构说明
+3.添加文件到缓存区
+git add .
+
+4.提交到本地仓库
+git commit -m "提交信息"
+
+5.修改提交流
+git branch --set-upstream-to=origin/master master
+
+6.提交到远程仓库
+git push -u origin master
+
+7.如果出现历史版本没有关联的问题，先执行下列命令拉取远程仓库的版本再执行步骤6
+git pull origin master  --allow-unrelated-histories
+
+二 拉取远程代码
+
+1.拉取
+git clone
+
+2.进入项目目录
+cd /项目目录
+
+3.切换并创建本地开发分支(一般不在master上开发)
+git checkout -b dev
+
+4.更改远端跟踪分支
+git fetch
+
+5.修改提交流
+git branch --set-upstream-to=origin/dev 
 
 
-#### 安装教程
+三、常用命令详细介绍
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+git init 在本地初始化一个仓库
 
 
-#### 码云特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+
+
+
+
+
+
+
