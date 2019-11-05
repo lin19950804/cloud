@@ -1,0 +1,11 @@
+*.svn-base
+*.MF
+*.class
+.svn/
+*/target
+/.idea
+/.settings/
+*/.settings/
+.project
+*/.project
+.classpath
