@@ -8,9 +8,9 @@ spring:
       server: 
         git: 
           searchPaths: respo
-          uri: https://github.com/forezp/SpringcloudConfig/
-          username:    
-          password:    
+          uri: http://gitlab.centaline.com.cn/dg-group/study.git
+          username: linhd2   
+          password: dg.1212
       label: master  
  
           
