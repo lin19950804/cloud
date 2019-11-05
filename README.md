@@ -18,7 +18,8 @@ git branch --set-upstream-to=origin/master master
 6.提交到远程仓库
 git push -u origin master
 
-7.如果出现历史版本没有关联的问题，先执行下列命令拉取远程仓库的版本再执行步骤6
+7.如果出现历史版本没有关联的问题，先执行下列命令拉取远程仓库的版本再执行步骤(6)
+
 git pull origin master  --allow-unrelated-histories
 
 二 拉取远程代码
