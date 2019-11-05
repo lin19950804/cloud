@@ -1,9 +1,10 @@
 一 将本地已经有的文件提交到远程仓库（未与远程仓库关联）
+
 1.初始化仓库
  git init
 
 2.添加远程
-git remote add origin git@gitee.com:linyang520/Springcloud.git
+git remote add origin git@gitlab.centaline.com.cn:dg-group/study.git
 
 3.添加文件到缓存区
 git add .
@@ -74,7 +75,7 @@ git branch --set-upstream-to=origin/dev
 
 第一次推送master分支的所有内容：git push -u origin master
 
-从远程库克隆：git clone git@github.com:XXX/XXXX.git 
+从远程库克隆：git clone git@gitlab.centaline.com.cn:dg-group/study.git 
 
 查看远程库详细信息： git remote -v
 
