@@ -12,7 +12,7 @@ public class App{
     public static void main( String[] args ){
         SpringApplication.run(App.class, args);
     }
-    @Value("${foo}")
+    @Value("${management.security.enabled}")
 	String foo;
 	@RequestMapping(value = "/hi")
 	public String hi(){
