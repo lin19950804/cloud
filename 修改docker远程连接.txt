@@ -1,0 +1,30 @@
+ vi /lib/systemd/system/docker.service
+
+修改以ExecStart开头的行：(因为我的系统是centos 7的，所以修改为下面得)
+
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock
+如果是centos7以下的话，就把ExecStart修改为：
+
+ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2375
+修改后保存文件，然后通知docker服务做出的修改
+
+systemctl daemon-reload
+重启docker服务
+
+service docker restart
+接下来测试一下看是否能连接到docker api。上面的2375就是对应端口
+
+curl http://localhost:2375/verion
+
+
+centos7下卸载docker
+1.首先停止docker运行：systemctl stop docker
+2.搜索已经安装的docker安装包 yum list installed|grep docker 和rpm -qa|grep docker
+搜索出来的安装包，全部删除
+3.删除docker的镜像:rm -rf /var/lib/docker
+4…测试docker是否卸载成功：再次执行命令rm -rf /var/lib/docker
+
+
+firewall-cmd --zone=public --add-port=8762/tcp --permanent
+
+
