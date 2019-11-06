@@ -13,6 +13,7 @@
   <packaging>jar</packaging>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <docker.image.prefix>springboot</docker.image.prefix>
   </properties>
   <dependencies>
    <dependency>
@@ -33,4 +34,30 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
  		</dependency>
   </dependencies>
+  <build>
+	<plugins>
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+		<!-- Docker maven plugin  添加 Docker 构建插件 -->
+        <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>docker-maven-plugin</artifactId>
+            <version>1.0.0</version>
+            <configuration>
+            	<dockerHost>http://124.156.112.92:2375</dockerHost>
+                <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                <dockerDirectory>src/main/docker</dockerDirectory>
+                <resources>
+                    <resource>
+                        <targetPath>/</targetPath>
+                        <directory>${project.build.directory}</directory>
+                        <include>${project.build.finalName}.jar</include>
+                    </resource>
+                </resources>
+            </configuration>
+        </plugin>
+	 </plugins>
+  </build>
 </project>
