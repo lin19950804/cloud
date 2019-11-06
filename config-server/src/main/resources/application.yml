@@ -8,9 +8,9 @@ spring:
       server: 
         git: 
           searchPaths: respo
-          uri: http://gitlab.centaline.com.cn/dg-group/study.git
-          username: linhd2   
-          password: dg.1212
+          uri: https://gitee.com/linyang520/Springcloud.git
+          username: 
+          password: 
       label: master  
  
           
