@@ -8,7 +8,7 @@ Spring cloud
  git init
 
 2.添加远程
-git remote add origin git@gitlab.centaline.com.cn:dg-group/study.git
+git remote add origin git@github.com:lin19950804/cloud.git
 
 3.添加文件到缓存区
 git add .
@@ -80,7 +80,7 @@ git branch --set-upstream-to=origin/dev
 
 第一次推送master分支的所有内容：git push -u origin master
 
-从远程库克隆：git clone git@gitlab.centaline.com.cn:dg-group/study.git 
+从远程库克隆：git clone git@github.com:lin19950804/cloud.git 
 
 查看远程库详细信息： git remote -v
 
