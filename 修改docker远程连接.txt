@@ -8,6 +8,9 @@ ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock
 ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2375
 修改后保存文件，然后通知docker服务做出的修改
 
+防火墙添加端口
+firewall-cmd --zone=public --add-port=2375/tcp --permanent
+
 systemctl daemon-reload
 重启docker服务
 
@@ -25,6 +28,5 @@ centos7下卸载docker
 4…测试docker是否卸载成功：再次执行命令rm -rf /var/lib/docker
 
 
-firewall-cmd --zone=public --add-port=8762/tcp --permanent
 
 
